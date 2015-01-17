@@ -1,0 +1,20 @@
+<section class="container well">
+  <% @peliculas.each do |pelicula| %>
+      <article class="row-fluid">
+               <div class="span2 thumbnail">
+                    <img src="<%= pelicula.img %>">
+                       <p class="parrafo text-center">
+                        <strong>Puntacion IMDB:</strong>
+                        <%= pelicula.critica %>
+                      </p>
+                </div>
+                <div class="span6">
+                  <h3 class="titulo-h3"><%= pelicula.titulo %></h3>
+                  <p class="parrafo">
+                    <a href="<%= pelicula.torrent %>"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR_dvtUtZqjNUWY_olf1_axmWvoZLP1RX6MbATyN2ksBTcnDik8" alt=""></a>
+                  </p>
+                  <p><%= link_to 'Ver mas', pelicula %></p>
+              </div>
+      </article>
+  <% end %> 
+</section>

@@ -1,0 +1,43 @@
+<article class="container well">
+<div class="row">
+   <div class="span2">
+
+      <img src="<%= @pelicula.img %>">
+         <p class="parrafo"><br>
+          <strong>Puntacion IMDB:</strong>
+          <%= @pelicula.critica %>
+        </p>
+    </div>
+    <div class="span8">
+        <h3 class="titulo-h3">
+          <%= @pelicula.titulo %>
+        </h3>
+        <p class="parrafo">
+          <strong>Director:</strong>
+          <%= @pelicula.director %>
+        </p>
+
+        <p class="parrafo">
+          <strong>Sinopsis:</strong>
+          <%= @pelicula.sinopsis %>
+        </p>
+
+        <p class="parrafo">
+          <strong>Formato:</strong>
+          <%= @pelicula.formato %>
+        </p>
+
+        <p class="parrafo">
+          <strong>Sub:</strong>
+          <a href="<%= @pelicula.sub %>">descargar subtitulos</a>
+        </p>
+        <p class="parrafo">
+          <strong>Torrent:</strong>
+          <a href="<%= @pelicula.torrent %>"> descargar torren</a>
+        </p>
+
+    </div>
+</div>
+</article>
+<%= link_to 'edit', edit_pelicula_path(@pelicula) %>
+<%= link_to 'Inicio', peliculas_path %>
