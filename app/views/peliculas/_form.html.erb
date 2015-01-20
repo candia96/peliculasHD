@@ -2,7 +2,8 @@
       <%= form_for(@pelicula) do |f| %>
           <% if @pelicula.errors.any? %>
             <div id="error_explanation">
-              <h2><%= pluralize(@pelicula.errors.count, "error") %> prohibited this pelicula from being saved:</h2>
+              <h2><%= pluralize(@pelicula.errors.count, "error") %> prohibited this pelicula from being saved:
+              </h2>
 
               <ul>
               <% @pelicula.errors.full_messages.each do |message| %>
@@ -25,10 +26,12 @@
                 <%= f.text_field :critica %>
               </div>
         </div>
+         <% formato={'BRrip'=>'BRrip','DVDrip'=> 'DVDrip', 'Screemrip'=>'Screemrip', 'DVDscreem'=>'DVDscreem' } %>
+         <% lista= formato.sort %>
         <div class="span6">
               <div class="field">
                 <%= f.label :formato %><br>
-                <%= f.text_field :formato %>
+                <%= f.select :formato, lista %>
               </div>
               <div class="field">
                 <%= f.label :torrent %><br>
@@ -51,7 +54,7 @@
                 <%= f.text_area :sinopsis, :cols=>60, rows: 10 %>
               </div>
               <div class="actions">
-                <%= f.submit'Enviar', :class => 'btn btn-success' %>
+                <%= f.submit'Aceptar', :class => 'btn btn-success' %>
                 <%= link_to "Volver", peliculas_path  , :class => 'btn btn-default'  %>
               </div>
 

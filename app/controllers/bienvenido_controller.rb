@@ -1,5 +1,5 @@
 class BienvenidoController < ApplicationController
   def inicio
-  	@peliculas= Pelicula.all
+  	@peliculas= Pelicula.order("id DESC")
   end
 end
