@@ -1,4 +1,4 @@
-<article class="container well">
+<article class="">
 <div class="row">
    <div class="span2">
 
@@ -38,7 +38,9 @@
 
     </div>
 </div>
+<% if user_signed_in?%>
 <%= link_to 'Editar', edit_pelicula_path(@pelicula), :class => 'btn btn-default' %>
 <%= link_to 'Inicio', root_url, :class => 'btn btn-default'%>
+<% end %>
 </article>
 

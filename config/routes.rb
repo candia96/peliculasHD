@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :peliculas
 
   get 'bienvenido/inicio'
-
+  get 'bienvenido/uno'
+  get 'sube_tu_pelicula'=> 'peliculas#new' , as: 'nueva_pelicula'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    root 'bienvenido#inicio'
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

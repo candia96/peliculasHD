@@ -1,10 +1,15 @@
 class PeliculasController < ApplicationController
+  before_action :authenticate_user!, only: [:edit]
   before_action :set_pelicula, only: [:show, :edit, :update, :destroy]
 
   # GET /peliculas
   # GET /peliculas.json
   def index
+    
     @peliculas = Pelicula.all
+
+    @titulo=  Pelicula.find(params[:titulo])
+
   end
 
   # GET /peliculas/1
